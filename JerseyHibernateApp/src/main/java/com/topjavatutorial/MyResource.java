@@ -32,8 +32,11 @@ public class MyResource {
     @Path("/create")
     @Consumes("application/json")
     public Response addEmployee(Employee emp){
-        emp.setName(emp.getName());
-        emp.setAge(emp.getAge());
+    	if (emp == null) 
+    		return Response.status(Response.Status.BAD_REQUEST).build();
+    	
+        //emp.setName(emp.getName());
+        //emp.setAge(emp.getAge());
                 
         EmployeeDAO dao = new EmployeeDAO();
         dao.addEmployee(emp);
@@ -55,7 +58,7 @@ public class MyResource {
     
     @DELETE
     @Path("/delete/{id}")
-    @Consumes("application/json")
+    //@Consumes("application/json")
     public Response deleteEmployee(@PathParam("id") int id){
         EmployeeDAO dao = new EmployeeDAO();
         int count = dao.deleteEmployee(id);
