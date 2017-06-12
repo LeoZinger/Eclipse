@@ -8,24 +8,16 @@ import org.hibernate.Transaction;
  
 public class EmployeeDAO {
     
-    public void addEmployee(Employee bean){
+    public void addEmployee(Employee emp){
         Session session = SessionUtil.getSession();        
         Transaction tx = session.beginTransaction();
-        addEmployee(session,bean);        
+        //addEmployee(session,bean);        
+        session.save(emp);
         tx.commit();
         session.close();
         
     }
-    
-    private void addEmployee(Session session, Employee bean){
-        Employee employee = new Employee();
-        
-        employee.setName(bean.getName());
-        employee.setAge(bean.getAge());
-        
-        session.save(employee);
-    }
-    
+       
     public List<Employee> getEmployees(){
         Session session = SessionUtil.getSession();    
         Query query = session.createQuery("from Employee");
