@@ -25,6 +25,17 @@ public class EmployeeDAO {
         session.close();
         return employees;
     }
+    
+    public Employee getEmployee(int id){
+        Session session = SessionUtil.getSession();    
+        String hql = "from Employee where id = :id";
+        Query query = session.createQuery(hql);
+        query.setInteger("id",id);
+        
+        Employee employee =  (Employee) query.uniqueResult();
+        session.close();
+        return employee;
+    }
  
     public int deleteEmployee(int id) {
         Session session = SessionUtil.getSession();
