@@ -24,6 +24,7 @@ public class MyResource {
     public List<Employee> getEmployee() {
         EmployeeDAO dao = new EmployeeDAO();
         List employees = dao.getEmployees();
+        //return (List<Employee>) Response.ok().entity(employees).build();
         return employees;
     }
  
