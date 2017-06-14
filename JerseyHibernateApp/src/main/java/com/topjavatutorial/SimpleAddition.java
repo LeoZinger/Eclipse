@@ -10,8 +10,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
  
 
-@Path("/Math")
-//@Path("/")
+//@Path("/SimpleAddition")
+@Path("/")
 public class SimpleAddition {
  
     @GET
