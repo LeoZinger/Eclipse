@@ -12,5 +12,6 @@
   <property name="hibernate.format_sql">true</property>
 <!--   <property name="hibernate.hbm2ddl.auto">create</property> -->
   <mapping class="com.topjavatutorial.dao.Employee"/>
+  <mapping class="com.topjavatutorial.dao.Customer"/>
  </session-factory>
 </hibernate-configuration>

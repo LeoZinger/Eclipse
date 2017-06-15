@@ -21,21 +21,11 @@ public class MyResource {
  
     @GET
     @Produces("application/json")
-    public List<Employee> getEmployees() {
+    public List<Employee> getEmployee() {
         EmployeeDAO dao = new EmployeeDAO();
         List employees = dao.getEmployees();
         //return (List<Employee>) Response.ok().entity(employees).build();
         return employees;
-    }
-    
-    @GET
-    @Path("/{id}")
-    @Produces("application/json")
-    public Employee getEmployee(@PathParam("id") int id) {
-        EmployeeDAO dao = new EmployeeDAO();
-        Employee employee = dao.getEmployee(id);
-        //return (List<Employee>) Response.ok().entity(employees).build();
-        return employee;
     }
  
     
