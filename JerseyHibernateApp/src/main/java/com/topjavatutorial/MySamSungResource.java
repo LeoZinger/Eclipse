@@ -36,8 +36,8 @@ public class MySamSungResource {
     }
 
     @GET
-    //@Path("/{id}")
-    @Path("/getCustomer/{id}")
+    @Path("/{id}")
+    //@Path("/getCustomer/{id}")
     @Produces("application/json")
     public Customer getCustomer(@PathParam("id") int id) {
     	CustomerDAO dao = new CustomerDAO();
